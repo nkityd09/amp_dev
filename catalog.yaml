@@ -1,21 +1,6 @@
 name: Cloudera
 
 entries:
-  - title: Speech To Text Summarization
-    label: speech-to-text-summarization
-    short_description: A demonstration of how CML can host LLM models using HuggingFace and Gradio
-    long_description: >-
-      The goal of this application is to demonstrate how the a Open Source LLM model can be deployed on CML. The application is built using OpenAI Whisper
-    image_path: >-
-      https://github.com/nkityd09/cml_speech_to_text/blob/main/images/whisper.png?raw=true
-    tags:
-      - ProServ
-      - Whisper
-      - HuggingFace
-      - Gradio
-      - PyTorch
-    git_url: "https://github.com/nkityd09/cml_speech_to_text.git"
-    is_prototype: true    
   - title: LLM PDF Document Chatbot
     label: intelligent-writing-assistance
     short_description: A demonstration of how CML can host LLM models using HuggingFace and Gradio
@@ -28,19 +13,5 @@ entries:
       - LLM
       - Gradio
       - PyTorch
-    git_url: "https://github.com/nkityd09/cml_chatbot.git"
+    git_url: "https://github.com/nkityd09/2023_q3_mbo.git"
     is_prototype: true
-  - title: Code Assistant
-    label: code-assistance-chatbot
-    short_description: A demonstration of how CML can host LLM models using HuggingFace and Gradio
-    long_description: >-
-      The goal of this application is to demonstrate how the a Open Source LLM model can be deployed on CML. The application is built using CodeLLama and can assists in writing Code
-    image_path: >-
-      https://github.com/nkityd09/cml_code_assistant/blob/main/images/coder.png?raw=true
-    tags:
-      - ProServ
-      - CodeLlama
-      - Gradio
-      - PyTorch
-    git_url: "https://github.com/nkityd09/cml_code_assistant.git"
-    is_prototype: true               
