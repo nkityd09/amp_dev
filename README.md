@@ -22,7 +22,7 @@ The AMP Application has been configured to use the following
 3. Provide the following URL and click "Add Source"
 
 ```
-https://raw.githubusercontent.com/nkityd09/amp_testing/catalog.yaml
+https://raw.githubusercontent.com/nkityd09/amp_testing/main/catalog.yaml
 ```
 
 4. Click on the AMP and "Configure Project", disable Spark as it is not required.
