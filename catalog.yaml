@@ -1,7 +1,7 @@
 name: Cloudera
 
 entries:
-  - title: LLM Code Chatbot
+  - title: CML Model Testing
     label: intelligent-writing-assistance
     short_description: A demonstration of how CML can host LLM models using HuggingFace and Gradio
     long_description: >-
@@ -13,5 +13,5 @@ entries:
       - LLM
       - Gradio
       - PyTorch
-    git_url: "https://github.com/nkityd09/2023_q3_mbo.git"
+    git_url: "https://github.com/nkityd09/amp_testing.git" 
     is_prototype: true

@@ -1,6 +1,6 @@
-name: CML Code Chatbot
+name: CML Model Testing AMP
 description: |
-  A demonstration of how CML can host LLM models using HuggingFace and Gradio
+  A demonstration of how CML Models can be deployed and used with applications
 
 author: Cloudera Inc.
 specification_version: 1.0
@@ -14,14 +14,6 @@ runtimes:
 
 tasks:
   - type: run_session
-    name: Validate GPU Availibility
-    script: session-resource-validation/check_gpu_resources.py
-    short_summary: Check for GPU availibility. 
-    long_summary: Check GPUs are enabled on this workspace and are currently schedulable.
-    kernel: python3
-    cpu: 2
-    memory: 8
-  - type: run_session
     name: Install Dependencies
     script: session-install-deps/install_setup_tools.py
     short_summary: Install Dependencies
@@ -29,31 +21,43 @@ tasks:
     cpu: 2
     memory: 16
   - type: run_session
-    name: Validate GPU Capability
-    script: session-resource-validation/check_gpu_capability.py
-    short_summary: Check for GPU capability. 
-    long_summary: Check GPU device supports the CUDA capabilities required.
-    kernel: python3
-    cpu: 2
-    memory: 16
-    gpu: 1
-  
-  - type: run_session
     name: Install Dependencies
     script: session-install-deps/install_dependencies.py
     short_summary: Install Dependencies
     kernel: python3
     cpu: 2
     memory: 16
-
-  - type: start_application
-    name: CML LLM Chatbot
-    subdomain: cmlllm
-    script: gradio-app/app.py
-    short_summary: Start CML LLM Chatbot application
-    long_summary: This application requires an available GPU to run the LLM model. Startup may be delayed if autoscaling is being performed or fail if GPU cannot be scheduled on this workspace. Please contact your administrator for GPU scheduling.
+  - type: create_model
+    name: Chat_model
+    entity_label: llm
+    description: Chat Model 
+    short_summary: Deploying a sample model that runs CML Model
+    default_resources:
     cpu: 4
-    memory: 32
+    memory: 16
     gpu: 1
-    environment_variables:
-      TASK_TYPE: START_APPLICATION
+  - type: build_model
+    entity_label: llm
+    comment: Some comment about the model
+    examples:
+      - request:
+          prompt: Name 5 cities in United States
+        response: 
+          greeting: Hello Ofek (21)
+    target_file_path: model_launch_scripts/launch_model_llama2-chat.py 
+    target_function_name: api_wrapper
+    kernel: python3
+  - type: deploy_model
+    entity_label: llm
+
+  # - type: start_application
+  #   name: CML LLM Test App
+  #   subdomain: cmlllm
+  #   script: gradio-app/app.py
+  #   short_summary: Start CML LLM Chatbot application
+  #   long_summary: This application requires an available GPU to run the LLM model. Startup may be delayed if autoscaling is being performed or fail if GPU cannot be scheduled on this workspace. Please contact your administrator for GPU scheduling.
+  #   cpu: 4
+  #   memory: 32
+  #   gpu: 1
+  #   environment_variables:
+  #     TASK_TYPE: START_APPLICATION
