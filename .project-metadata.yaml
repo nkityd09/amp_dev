@@ -42,9 +42,7 @@ tasks:
     examples:
       - request:
           prompt: Name 5 cities in United States
-        response: 
-          greeting: Hello Ofek (21)
-    target_file_path: model_launch_scripts/launch_model_llama2-chat.py 
+    target_file_path: gradio-app/app.py
     target_function_name: api_wrapper
     kernel: python3
   - type: deploy_model
