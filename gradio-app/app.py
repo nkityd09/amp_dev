@@ -37,7 +37,7 @@ tokenizer = AutoTokenizer.from_pretrained("HuggingFaceH4/zephyr-7b-alpha")
 
 llm_model = AutoModelForCausalLM.from_pretrained("HuggingFaceH4/zephyr-7b-alpha", #meta-llama/Llama-2-13b-chat-hf
                                                      load_in_4bit=True,
-                                                     device_map='balanced_low_0',
+                                                     device_map='auto',
                                                      torch_dtype=torch.float16,
                                                      low_cpu_mem_usage=True
                                                     )
