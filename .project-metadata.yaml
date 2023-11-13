@@ -47,6 +47,9 @@ tasks:
     kernel: python3
   - type: deploy_model
     entity_label: llm
+    cpu: 4
+    memory: 32
+    gpu: 1
 
   # - type: start_application
   #   name: CML LLM Test App
