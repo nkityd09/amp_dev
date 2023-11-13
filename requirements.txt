@@ -10,9 +10,8 @@ faiss-gpu
 transformers 
 InstructorEmbedding 
 sentence_transformers==2.2.2
-bitsandbytes==0.39.1
-datasets==2.13.0
-accelerate==0.20.3
+accelerate 
+bitsandbytes 
 xformers 
 einops
 pysqlite3-binary
