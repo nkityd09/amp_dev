@@ -8,7 +8,7 @@ prototype_version: 1.0
 date: "2023-07-21"
 
 runtimes:
-  - editor: JupyterLab
+  - editor: Workbench
     kernel: Python 3.9
     edition: Nvidia GPU
 
@@ -34,7 +34,7 @@ tasks:
     short_summary: Deploying a sample model that runs CML Model
     default_resources:
     cpu: 4
-    memory: 16
+    memory: 32
     gpu: 1
   - type: build_model
     entity_label: llm
