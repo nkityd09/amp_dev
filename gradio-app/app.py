@@ -3,45 +3,32 @@ import gradio as gr
 import shutil
 import time
 import warnings
-
 warnings.filterwarnings("ignore")
 import textwrap
 import langchain
-from langchain.llms import HuggingFacePipeline
-from langchain.chains import LLMChain
 import torch
 import transformers
+from langchain.llms import HuggingFacePipeline
+from langchain.chains import LLMChain
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers import pipeline
-### Multi-document retriever
-from langchain.vectorstores import Chroma, FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains import RetrievalQA
-from langchain.document_loaders import PyPDFLoader
-from langchain.document_loaders import DirectoryLoader
-from InstructorEmbedding import INSTRUCTOR
-
-import glob
-from InstructorEmbedding import INSTRUCTOR
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
-import uuid
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-import chromadb
-from chromadb.config import Settings
 from langchain.prompts import PromptTemplate
+from huggingface_hub import login
 
+hugging_face_model = os.environ["HF_MODEL"]
+access_token = os.environ["HF_TOKEN"]
+if access_token:
+    login(token=access_token)
 
-tokenizer = AutoTokenizer.from_pretrained("HuggingFaceH4/zephyr-7b-alpha")
+tokenizer = AutoTokenizer.from_pretrained(hugging_face_model)
 
-llm_model = AutoModelForCausalLM.from_pretrained("HuggingFaceH4/zephyr-7b-alpha", #meta-llama/Llama-2-13b-chat-hf
+llm_model = AutoModelForCausalLM.from_pretrained(hugging_face_model,
                                                      load_in_4bit=True,
                                                      device_map='auto',
                                                      torch_dtype=torch.float16,
                                                      low_cpu_mem_usage=True
                                                     )
-max_len = 4096
+max_len = 8192
 llm_task = "text-generation"
 #llm_task = "text-generation"
 T = 0.1

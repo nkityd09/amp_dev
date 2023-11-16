@@ -7,6 +7,17 @@ specification_version: 1.0
 prototype_version: 1.0
 date: "2023-07-21"
 
+environment_variables:
+  HF_MODEL:
+    default: "mistralai/Mistral-7B-v0.1"
+    description: >-
+      Provide HuggingFace Model you want to use
+  HF_TOKEN:
+    default: ""
+    description: >-
+      Blank for Ungated Models
+      Provide HuggingFace Token for Gated Models.
+
 runtimes:
   - editor: Workbench
     kernel: Python 3.9
