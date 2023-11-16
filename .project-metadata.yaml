@@ -61,6 +61,13 @@ tasks:
     cpu: 4
     memory: 32
     gpu: 1
+  - type: start_application
+    name: Streamlit App
+    subdomain: streamlit
+    script: gradio-app/launch_app.py
+    short_summary: Start Streamlit application
+    environment_variables:
+      TASK_TYPE: START_APPLICATION
 
   # - type: start_application
   #   name: CML LLM Test App
