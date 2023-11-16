@@ -1,6 +1,3 @@
-torch==2.0.1
-chromadb
-gradio
 langchain
 typing-inspect==0.8.0
 typing_extensions==4.5.0
@@ -10,9 +7,9 @@ faiss-gpu
 transformers 
 InstructorEmbedding 
 sentence_transformers==2.2.2
-accelerate 
-bitsandbytes 
 xformers 
 einops
 pysqlite3-binary
 jinja2==3.1.2
+streamlit
+plotly
