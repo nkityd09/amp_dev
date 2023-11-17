@@ -66,6 +66,8 @@ tasks:
     subdomain: streamlit
     script: gradio-app/launch_app.py
     short_summary: Start Streamlit application
+    cpu: 4
+    memory: 32
     environment_variables:
       TASK_TYPE: START_APPLICATION
 
