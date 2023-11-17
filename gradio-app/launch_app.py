@@ -1,1 +1,1 @@
-!streamlit run streamlit_app.py --server.port $CDSW_APP_PORT --server.address 127.0.0.1
+!streamlit run gradio-app/streamlit_app.py --server.port $CDSW_APP_PORT --server.address 127.0.0.1 --logger.level=debug
